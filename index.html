@@ -155,7 +155,7 @@
            </video> -->
       <!-- PLACEHOLDER: teaser image/video -->
       <figure class="image">
-        <img src="./static/images/teaser_placeholder.png"
+        <img src="./static/images/teaser.png"
              alt="TODO: Replace with teaser figure — e.g. overview diagram of the localization framework"/>
       </figure>
       <h2 class="subtitle has-text-centered">
@@ -397,10 +397,10 @@
         <p class="has-text-grey has-text-centered">[TODO: SWE simulation results figure — error vs. time, RBPF vs. PF comparison]</p>
         <div class="content has-text-centered">
           <!-- TODO: Add SWE simulation video -->
-          <!-- <video id="swe-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/swe_result.mp4" type="video/mp4">
-               </video> -->
-          <p class="has-text-grey">[TODO: SWE simulation result video]</p>
+          <video id="swe-result-video" controls muted preload playsinline width="75%">
+                 <source src="./static/videos/swe_censored.mp4" type="video/mp4">
+               </video>
+          <!-- <p class="has-text-grey">[TODO: SWE simulation result video]</p> -->
         </div>
         <br/>
 
@@ -421,9 +421,9 @@
         <p class="has-text-grey has-text-centered">[TODO: Advection-diffusion simulation results figure]</p>
         <div class="content has-text-centered">
           <!-- TODO: Add advection-diffusion simulation video -->
-          <!-- <video id="advdiff-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/advdiff_result.mp4" type="video/mp4">
-               </video> -->
+          <video id="advdiff-result-video" controls muted preload playsinline width="75%">
+                 <source src="./static/videos/add_diff_ani_sim_censored.mp4" type="video/mp4">
+               </video>
           <p class="has-text-grey">[TODO: Advection-diffusion simulation result video]</p>
         </div>
 
@@ -452,10 +452,21 @@
         <!-- ASV Platform -->
         <h3 class="title is-4">Autonomous Surface Vehicle Platform</h3>
         <!-- TODO: Add photo of the ASV platform -->
-        <!-- <figure class="image">
-               <img src="./static/images/asv_platform.jpg" alt="Autonomous surface vehicle used in field experiments"/>
-             </figure> -->
-        <p class="has-text-grey has-text-centered">[TODO: Photo of ASV platform]</p>
+        <div class="columns">
+            <div class="column">
+            <figure class="image is-4by3">
+              <img src="./static/images/asv.png" alt="ASV platform side view"/>
+            </figure>
+            <p class="has-text-centered"><strong>ASV SeaRobotics Surveyor, left YSI EXO2, right ADCP</strong></p>
+            </div>
+            <div class="column">
+            <figure class="image is-4by3">
+              <img src="./static/images/asv_in_mission.png" alt="ASV platform in mission"/>
+            </figure>
+            <p class="has-text-centered"><strong>ASV in Mission</strong></p>
+          </div>
+        </div>
+        <!-- <p class="has-text-grey has-text-centered">[TODO: Photo of ASV platform]</p> -->
         <br/>
 
         <!-- Field Results -->
@@ -472,13 +483,13 @@
         <!-- <figure class="image">
                <img src="./static/images/field_results.png" alt="Field experiment localization results"/>
              </figure> -->
-        <p class="has-text-grey has-text-centered">[TODO: Field experiment trajectory figure — estimated vs. GPS ground truth]</p>
+        <!-- <p class="has-text-grey has-text-centered">[TODO: Field experiment trajectory figure — estimated vs. GPS ground truth]</p> -->
         <div class="content has-text-centered">
           <!-- TODO: Add field experiment video -->
-          <!-- <video id="field-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/field_experiment.mp4" type="video/mp4">
-               </video> -->
-          <p class="has-text-grey">[TODO: Field experiment video]</p>
+          <video id="field-result-video" controls muted preload playsinline width="75%">
+                 <source src="./static/videos/adv_diff_ani_censored.mp4" type="video/mp4">
+               </video>
+          <!-- <p class="has-text-grey">[TODO: Field experiment video]</p> -->
         </div>
 
       </div>
