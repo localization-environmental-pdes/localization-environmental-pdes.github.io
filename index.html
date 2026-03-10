@@ -8,20 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Localization via Environmental PDEs</title>
 
-  <!-- TODO: Replace Google Analytics ID below with your own, or remove this block -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -177,33 +163,32 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
 
-        <div class="item item-swe-sim">
+        <div class="item item-fullbody">
           <!-- TODO: Replace src with SWE simulation video -->
-          <video poster="" id="swe-sim" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/swe_simulation.mp4" type="video/mp4">
+          <video poster="" id="swe-sim" autoplay controls muted loop playsinline width="40%" >
+            <source src="./static/videos/swe_ani_censored.mp4" type="video/mp4">
           </video>
         </div>
 
-        <div class="item item-advdiff-sim">
+        <div class="item item-fullbody">
           <!-- TODO: Replace src with advection-diffusion simulation video -->
           <video poster="" id="advdiff-sim" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/advdiff_simulation.mp4" type="video/mp4">
+            <source src="./static/videos/adv_diff_sim_censored.mp4" type="video/mp4">
           </video>
         </div>
 
-        <div class="item item-field-salinity">
+        <div class="item item-fullbody">
           <!-- TODO: Replace src with ASV field experiment video (salinity) -->
           <video poster="" id="field-salinity" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/field_salinity.mp4" type="video/mp4">
+            <source src="./static/videos/adv_diff_field_censored.mp4" type="video/mp4">
           </video>
         </div>
 
-        <div class="item item-field-temp">
-          <!-- TODO: Replace src with ASV field experiment video (temperature / DO) -->
+        <!-- <div class="item item-field-temp">
           <video poster="" id="field-temp" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/field_temperature.mp4" type="video/mp4">
           </video>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -291,7 +276,7 @@
         <!-- <figure class="image">
                <img src="./static/images/system_overview.png" alt="System overview diagram"/>
              </figure> -->
-        <p class="has-text-grey has-text-centered">[TODO: System overview / block diagram figure]</p>
+        <!-- <p class="has-text-grey has-text-centered">[TODO: System overview / block diagram figure]</p> -->
         <br/>
 
         <!-- PDE Models -->
@@ -312,7 +297,7 @@
               <!-- <figure class="image">
                      <img src="./static/images/swe_snapshot.png" alt="SWE field snapshot"/>
                    </figure> -->
-              <p class="has-text-grey has-text-centered">[TODO: SWE simulation field snapshot]</p>
+              <!-- <p class="has-text-grey has-text-centered">[TODO: SWE simulation field snapshot]</p> -->
             </div>
           </div>
 
@@ -330,7 +315,7 @@
               <!-- <figure class="image">
                      <img src="./static/images/advdiff_snapshot.png" alt="Advection-diffusion field snapshot"/>
                    </figure> -->
-              <p class="has-text-grey has-text-centered">[TODO: Advection-diffusion field snapshot]</p>
+              <!-- <p class="has-text-grey has-text-centered">[TODO: Advection-diffusion field snapshot]</p> -->
             </div>
           </div>
 
@@ -365,7 +350,7 @@
         <!-- <figure class="image">
                <img src="./static/images/rbpf_diagram.png" alt="RBPF particle evolution"/>
              </figure> -->
-        <p class="has-text-grey has-text-centered">[TODO: RBPF particle evolution / diagram figure]</p>
+        <!-- <p class="has-text-grey has-text-centered">[TODO: RBPF particle evolution / diagram figure]</p> -->
 
       </div>
     </div>
@@ -397,8 +382,8 @@
         <p class="has-text-grey has-text-centered">[TODO: SWE simulation results figure — error vs. time, RBPF vs. PF comparison]</p>
         <div class="content has-text-centered">
           <!-- TODO: Add SWE simulation video -->
-          <video id="swe-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/swe_censored.mp4" type="video/mp4">
+          <video id="swe-result-video" controls muted preload playsinline width="50%">
+                 <source src="./static/videos/swe_ani_censored.mp4" type="video/mp4">
                </video>
           <!-- <p class="has-text-grey">[TODO: SWE simulation result video]</p> -->
         </div>
@@ -422,7 +407,7 @@
         <div class="content has-text-centered">
           <!-- TODO: Add advection-diffusion simulation video -->
           <video id="advdiff-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/add_diff_ani_sim_censored.mp4" type="video/mp4">
+                 <source src="./static/videos/adv_diff_sim_censored.mp4" type="video/mp4">
                </video>
           <p class="has-text-grey">[TODO: Advection-diffusion simulation result video]</p>
         </div>
@@ -487,7 +472,7 @@
         <div class="content has-text-centered">
           <!-- TODO: Add field experiment video -->
           <video id="field-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/adv_diff_ani_censored.mp4" type="video/mp4">
+                 <source src="./static/videos/adv_diff_field_censored.mp4" type="video/mp4">
                </video>
           <!-- <p class="has-text-grey">[TODO: Field experiment video]</p> -->
         </div>

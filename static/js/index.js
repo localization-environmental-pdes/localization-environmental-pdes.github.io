@@ -28,12 +28,12 @@ $(document).ready(function() {
       $(".navbar-menu").toggleClass("is-active");
 
     });
-
+    var carouselItems = document.querySelectorAll('.carousel .item').length;
     var options = {
 			slidesToScroll: 1,
-			slidesToShow: 3,
-			loop: true,
-			infinite: true,
+			slidesToShow: Math.min(3, carouselItems - 1) || 1,  // Ensure at least 1 less than total, minimum 1
+      loop: true,  // Only loop if enough items
+      infinite: true,  // Only infinite if enough items
 			autoplay: false,
 			autoplaySpeed: 3000,
     }
