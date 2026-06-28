@@ -21,6 +21,7 @@
   <!-- TODO: Add a favicon for your project, e.g. an ASV or wave icon -->
   <link rel="icon" href="./static/images/favicon.svg">
 
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -61,17 +62,21 @@
           <!-- TODO: Replace the author names and links below with the actual authors -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">Author One</a><sup>1</sup>,</span>
+              <a href="#">Jose Fuentes</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">Author Two</a><sup>1</sup>,</span>
+              <a href="#">Abdullah Al Redwan Newaz </a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="#">Author Three</a><sup>1</sup>
+              <a href="#">Ana Cavalcanti</a><sup>1</sup>
+            ,</span>
+            <span class="author-block">
+              <a href="#">Leonardo Bobadilla</a><sup>1</sup>
             </span>
           </div>
 
           <!-- TODO: Replace with actual institution(s) -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Institution Name</span>
+            <span class="author-block"><sup>1</sup>Institute of Environment, Florida International University</span>
+            <span class="author-block"><sup>2</sup>Department of Computer Science, The University of New Orleans</span>
           </div>
 
           <div class="column has-text-centered">
@@ -142,7 +147,7 @@
       <!-- PLACEHOLDER: teaser image/video -->
       <figure class="image">
         <img src="./static/images/teaser.png"
-             alt="TODO: Replace with teaser figure — e.g. overview diagram of the localization framework"/>
+             alt="Overview diagram of the localization framework"/>
       </figure>
       <h2 class="subtitle has-text-centered">
         We localize GPS-denied vehicles by matching onboard sensor readings against
@@ -166,21 +171,21 @@
         <div class="item item-fullbody">
           <!-- TODO: Replace src with SWE simulation video -->
           <video poster="" id="swe-sim" autoplay controls muted loop playsinline width="40%" >
-            <source src="./static/videos/swe_ani_censored.mp4" type="video/mp4">
+            <source src="./static/videos/swe_ani.mp4" type="video/mp4">
           </video>
         </div>
 
         <div class="item item-fullbody">
           <!-- TODO: Replace src with advection-diffusion simulation video -->
           <video poster="" id="advdiff-sim" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/adv_diff_sim_censored.mp4" type="video/mp4">
+            <source src="./static/videos/adv_diff_ani_sim.mp4" type="video/mp4">
           </video>
         </div>
 
         <div class="item item-fullbody">
           <!-- TODO: Replace src with ASV field experiment video (salinity) -->
           <video poster="" id="field-salinity" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/adv_diff_field_censored.mp4" type="video/mp4">
+            <source src="./static/videos/adv_diff_ani.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -379,11 +384,11 @@
         <!-- <figure class="image">
                <img src="./static/images/swe_results.png" alt="SWE simulation results"/>
              </figure> -->
-        <p class="has-text-grey has-text-centered">[TODO: SWE simulation results figure — error vs. time, RBPF vs. PF comparison]</p>
+        <!-- <p class="has-text-grey has-text-centered">[TODO: SWE simulation results figure — error vs. time, RBPF vs. PF comparison]</p> -->
         <div class="content has-text-centered">
           <!-- TODO: Add SWE simulation video -->
           <video id="swe-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/swe_censored.mp4" type="video/mp4">
+                 <source src="./static/videos/swe_ani.mp4" type="video/mp4">
                </video>
           <!-- <p class="has-text-grey">[TODO: SWE simulation result video]</p> -->
         </div>
@@ -403,19 +408,102 @@
         <!-- <figure class="image">
                <img src="./static/images/advdiff_results.png" alt="Advection-diffusion simulation results"/>
              </figure> -->
-        <p class="has-text-grey has-text-centered">[TODO: Advection-diffusion simulation results figure]</p>
+        <!-- <p class="has-text-grey has-text-centered">[TODO: Advection-diffusion simulation results figure]</p> -->
         <div class="content has-text-centered">
           <!-- TODO: Add advection-diffusion simulation video -->
           <video id="advdiff-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/add_diff_ani_sim_censored.mp4" type="video/mp4">
+                 <source src="./static/videos/adv_diff_ani_sim.mp4" type="video/mp4">
                </video>
-          <p class="has-text-grey">[TODO: Advection-diffusion simulation result video]</p>
+
         </div>
 
       </div>
     </div>
   </div>
 </section>
+
+<!-- ===================== RESULTS TABLE ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative Results</h2>
+        
+        <div class="content">
+          <table class="table is-striped is-hoverable">
+            <thead>
+              <tr>
+                <th rowspan="2" style="vertical-align: middle;">M</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid #999;">
+                  SWE
+                </th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid #999;">
+                  Advection-Diffusion
+                </th>
+              </tr>
+              <tr>
+                <th style="text-align: center;">RMSE (m)</th>
+                <th style="text-align: center;">Final Error (m)</th>
+                <th style="text-align: center;">RMSE (m)</th>
+                <th style="text-align: center;">Final Error (m)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: bold;">1</td>
+                <td style="text-align: center;">1.59 ± 0.55</td>
+                <td style="text-align: center;">1.35 ± 0.49</td>
+                <td style="text-align: center;">2.63 ± 1.64</td>
+                <td style="text-align: center;">2.11 ± 0.13</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold;">2</td>
+                <td style="text-align: center;">0.94 ± 0.10</td>
+                <td style="text-align: center;">0.90 ± 0.26</td>
+                <td style="text-align: center;">2.27 ± 1.21</td>
+                <td style="text-align: center;">1.61 ± 0.39</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold;">3</td>
+                <td style="text-align: center;">0.82 ± 0.06</td>
+                <td style="text-align: center;">0.69 ± 0.08</td>
+                <td style="text-align: center;">1.51 ± 0.79</td>
+                <td style="text-align: center;">1.62 ± 0.64</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p class="has-text-centered is-size-7 has-text-grey-light" style="margin-top: 0.75rem;">
+            <strong>Table 1:</strong> Performance Comparison of SWE and Advection-Diffusion Models 
+            across varying Feature Counts (M).
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ RESULTS TABLE -->
+
+<!-- ===================== BOXPLOT COMPARISON ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">PF vs RBPF Comparison Across Particle Counts</h2>
+        <div id="boxplot-container" style="width: 100%;"></div>
+        <p class="has-text-centered is-size-7 has-text-grey-light" style="margin-top: 1rem;">
+          <strong>Figure:</strong> Comparison of PF (<span style="color: #4169E1;">Blue</span>) and RBPF 
+          (<span style="color: #FF8C00;">Orange</span>) localisation accuracy on the shallow-water estimation (SWE) 
+          task across five independent runs for varying numbers of particles. Both metrics decrease as particle 
+          count increases, with RBPF consistently outperforming PF at equivalent sample sizes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ BOXPLOT COMPARISON -->
+
 <!--/ SIMULATIONS -->
 
 
@@ -472,7 +560,7 @@
         <div class="content has-text-centered">
           <!-- TODO: Add field experiment video -->
           <video id="field-result-video" controls muted preload playsinline width="75%">
-                 <source src="./static/videos/adv_diff_ani_censored.mp4" type="video/mp4">
+                 <source src="./static/videos/adv_diff_ani.mp4" type="video/mp4">
                </video>
           <!-- <p class="has-text-grey">[TODO: Field experiment video]</p> -->
         </div>
@@ -489,8 +577,8 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <!-- TODO: Update authors, title, booktitle, pages, and year once the paper is published -->
-    <pre><code>@inproceedings{TODO2026localization,
-  author    = {Author One and Author Two and Author Three},
+    <pre><code>@inproceedings{Fuentes2026localization,
+  author    = {Fuentes, Jose and Newaz, Abdullah Al Redwan and Cavalcanti, Ana and Bobadilla, Leonardo},
   title     = {Localization in Spatiotemporal Fields via Environmental {PDEs}},
   booktitle = {Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   year      = {2026},
@@ -527,6 +615,144 @@
     </div>
   </div>
 </footer>
+
+<script>
+// CSV data from benchmark results
+const csvRawData = `Computation_Time_s_0_100,Computation_Time_s_0_200,Computation_Time_s_0_300,Computation_Time_s_0_400,Computation_Time_s_0_500,Computation_Time_s_1_100,Computation_Time_s_1_200,Computation_Time_s_1_300,Computation_Time_s_1_400,Computation_Time_s_1_500,Final_Error_0_100,Final_Error_0_200,Final_Error_0_300,Final_Error_0_400,Final_Error_0_500,Final_Error_1_100,Final_Error_1_200,Final_Error_1_300,Final_Error_1_400,Final_Error_1_500,RMSE_m_0_100,RMSE_m_0_200,RMSE_m_0_300,RMSE_m_0_400,RMSE_m_0_500,RMSE_m_1_100,RMSE_m_1_200,RMSE_m_1_300,RMSE_m_1_400,RMSE_m_1_500
+50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,0.5925,0.7796,0.8323,0.7952,0.8317,0.5589,0.4842,0.8981,0.5635,0.5966,1.0463,1.0969,1.0702,1.0506,1.0855,0.7854,0.8274,0.767,0.7796,0.8052
+50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,0.7405,0.7132,0.7912,0.9097,0.8482,1.0587,0.6936,0.6061,0.7383,0.6635,1.0803,1.0309,1.0105,1.0703,1.0536,0.8652,0.8438,1.0003,0.7967,0.7725
+50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,0.8035,0.8081,0.8582,0.7807,0.8025,0.6769,0.9734,0.9906,0.7179,0.691,1.0758,1.0369,1.1895,1.0517,1.0418,0.8557,0.9551,0.7961,0.7494,0.7822
+50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,0.7168,0.844,0.7491,0.8534,0.8321,0.5127,0.7977,0.5752,1.2613,0.9583,1.1708,1.1362,1.0566,1.1332,1.0206,0.8192,0.7909,0.8865,0.8507,0.828
+50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,0.826,0.7813,0.8282,0.7904,0.8046,0.9624,0.7841,0.5882,0.7698,0.6,1.1414,1.0826,1.09,1.0269,1.1304,0.8715,0.8126,0.7624,0.8593,0.8269
+,,50.0,,,,,50.0,,,,,0.7906,,,,,1.0663,,,,,1.1083,,,,,0.8263,,`;
+
+function parseCSVData(csvString) {
+  const lines = csvString.trim().split('\n');
+  const headers = lines[0].split(',');
+  const data = [];
+  
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(',');
+    const row = {};
+    headers.forEach((header, j) => {
+      const val = values[j];
+      row[header] = val === '' ? null : parseFloat(val);
+    });
+    data.push(row);
+  }
+  
+  return { headers, data };
+}
+
+function createBoxplots() {
+  const { headers, data } = parseCSVData(csvRawData);
+  
+  const particleCounts = [100, 200, 300, 400, 500];
+  const conditions = [
+    { id: 0, label: 'PF', color: '#4169E1' },    // RoyalBlue
+    { id: 1, label: 'RBPF', color: '#FF8C00' }   // Orange
+  ];
+  
+  // Prepare data for RMSE boxplot
+  const rmseTraces = [];
+  const finalErrorTraces = [];
+  
+  particleCounts.forEach((pc, pcIndex) => {
+    conditions.forEach(cond => {
+      // RMSE data
+      const rmseColName = `RMSE_m_${cond.id}_${pc}`;
+      const rmseValues = data
+        .map(row => row[rmseColName])
+        .filter(v => v !== null && !isNaN(v));
+      
+      if (rmseValues.length > 0) {
+        rmseTraces.push({
+          y: rmseValues,
+          name: cond.label,
+          type: 'box',
+          boxmean: false,
+          marker: { color: cond.color },
+          x: Array(rmseValues.length).fill(pc),
+          xaxis: 'x',
+          yaxis: 'y',
+          legendgroup: cond.label,
+          showlegend: pcIndex === 0  // Only show legend for first particle count
+        });
+      }
+      
+      // Final Error data
+      const errorColName = `Final_Error_${cond.id}_${pc}`;
+      const errorValues = data
+        .map(row => row[errorColName])
+        .filter(v => v !== null && !isNaN(v));
+      
+      if (errorValues.length > 0) {
+        finalErrorTraces.push({
+          y: errorValues,
+          name: cond.label,
+          type: 'box',
+          boxmean: false,
+          marker: { color: cond.color },
+          x: Array(errorValues.length).fill(pc),
+          xaxis: 'x2',
+          yaxis: 'y2',
+          legendgroup: cond.label,
+          showlegend: false  // Don't duplicate legend
+        });
+      }
+    });
+  });
+  
+  const layout = {
+    title: {
+      text: 'Performance Comparison: Particle Filter (PF) vs Rao-Blackwellized Particle Filter (RBPF)',
+      x: 0.5,
+      xanchor: 'center',
+      font: { size: 14 }
+    },
+    grid: { rows: 1, columns: 2, pattern: 'independent' },
+    xaxis: {
+      title: 'Particle Count',
+      tickvals: particleCounts,
+      ticktext: particleCounts.map(pc => pc.toString()),
+      domain: [0, 0.45]
+    },
+    xaxis2: {
+      title: 'Particle Count',
+      tickvals: particleCounts,
+      ticktext: particleCounts.map(pc => pc.toString()),
+      domain: [0.55, 1]
+    },
+    yaxis: {
+      title: 'RMSE (m)',
+      domain: [0, 1]
+    },
+    yaxis2: {
+      title: 'Final Position Error (m)',
+      domain: [0, 1]
+    },
+    height: 450,
+    hovermode: 'closest',
+    margin: { l: 60, r: 60, t: 80, b: 60 },
+    plot_bgcolor: 'rgba(240, 240, 240, 0.5)',
+    paper_bgcolor: 'white',
+    showlegend: true,
+    legend: {
+      x: 0.5,
+      y: 1.08,
+      xanchor: 'center',
+      yanchor: 'top',
+      orientation: 'h'
+    }
+  };
+  
+  const allTraces = [...rmseTraces, ...finalErrorTraces];
+  Plotly.newPlot('boxplot-container', allTraces, layout, { responsive: true, displayModeBar: false });
+}
+
+// Create boxplots when DOM is ready
+document.addEventListener('DOMContentLoaded', createBoxplots);
+</script>
 
 </body>
 </html>
